@@ -15,19 +15,25 @@ const StudentList = () => {
     }
 
     return (
-        <div className='w-80'>  
-         <ul className='m-5'>
-         <h1 className='font-bold text-2xl underline text-center mb-3'>List of Students</h1>
+        <div className="w-full max-w-md mx-auto mt-10 bg-white shadow-md rounded-lg overflow-hidden">
+          <ul className="px-5 py-4">
+            <h1 className="font-extrabold text-3xl text-center text-gray-700 mb-5">List of Students</h1>
             {Student.map((item, index) => {
-                return <li className='flex w-50 p-1 items-center justify-between' key={index}>
-                    <h2 className='text-lg p-2'>{item.id}. {item.name}</h2>
-                    <button className='ml-10 h-fit p-1 bg-black disabled:opacity-50 text-white rounded-md hover:cursor-pointer hover:disabled:cursor-not-allowed'
-                    onClick={()=>addFav(item.id, item.fav)} disabled={item.fav}>Add To Favourite</button>
+              return (
+                <li className="flex justify-between items-center bg-gray-100 px-4 py-2 mb-2 rounded-md shadow-sm" key={index}>
+                  <h2 className="text-lg font-semibold text-gray-800">{item.id}. {item.name}</h2>
+                  <button
+                    className="ml-10 px-3 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    onClick={() => addFav(item.id, item.fav)} 
+                    disabled={item.fav}>
+                    Add To Favourite
+                  </button>
                 </li>
+              );
             })}
-        </ul>
+          </ul>
         </div>
-    )
+      );
 }
 
 export default StudentList;

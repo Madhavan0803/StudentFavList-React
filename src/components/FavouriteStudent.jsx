@@ -18,22 +18,25 @@ const FavouriteStudent = () => {
     }
 
     return (
-        <div className='m-5 w-80'>
-             <ul className='m-5'>
-              <h1 className='font-bold text-2xl underline text-center mb-3'>Favourite Students</h1>
+        <div className="w-full max-w-md mx-auto mt-10 bg-white shadow-md rounded-lg overflow-hidden">
+          <ul className="px-5 py-4">
+            <h1 className="font-extrabold text-3xl text-center text-gray-700 mb-5">Favourite Students</h1>
             {favStudent.map((item, index) => (
-                <li className='flex w-50 p-1 items-center justify-between' key={index}>
-                    <div className='flex'>
-                    <p className=' flex text-lg p-2 items-center mr-1'>{star}</p>
-                    <h2 className=' flex text-lg p-2 items-center' key={index}>{item.name}</h2>
-                    </div>
-                    <button className='h-fit p-1 bg-red-600 text-white rounded-md hover:cursor-pointer '
-                        onClick={() => removeFav(item.id, item.fav)}>Remove</button>
-                </li>
+              <li className="flex justify-between items-center bg-gray-100 px-4 py-2 mb-2 rounded-md shadow-sm" key={index}>
+                <div className="flex items-center">
+                  <p className="text-yellow-500 text-xl mr-2">{star}</p>
+                  <h2 className="text-lg font-semibold text-gray-800">{item.name}</h2>
+                </div>
+                <button 
+                  className="px-3 py-2 bg-red-500 text-white font-medium rounded-md hover:bg-red-600 transition duration-300"
+                  onClick={() => removeFav(item.id, item.fav)}>
+                  Remove
+                </button>
+              </li>
             ))}
-             </ul>
+          </ul>
         </div>
-        )
+      );
 }
 
 export default FavouriteStudent;

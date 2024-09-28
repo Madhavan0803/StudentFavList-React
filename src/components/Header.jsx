@@ -19,14 +19,14 @@ const Header = (props) => {
         navigate("/favouritestudent")
       }
 
-  return (
-    <header className="w-full max-h-fit bg-rose-600 content-center flex ">
-    <h1 className='text-white p-2 ml-5 text-xl cursor-pointer underline hover:text-yellow-400'
-      onClick={studentList}>List of Students</h1>
-    <h1 className='text-white p-2 ml-5 text-xl cursor-pointer underline hover:underline hover:text-yellow-400'
-      onClick={favouriteList}>Favourite Students</h1>
-  </header>
-  )
+      return (
+        <header className="w-full bg-gradient-to-r from-rose-500 to-pink-500 py-4 flex justify-center gap-10 shadow-lg">
+          <h1 className="text-white text-2xl font-semibold cursor-pointer underline hover:no-underline hover:text-yellow-300 transition duration-300"
+            onClick={studentList}>List of Students</h1>
+          <h1 className="text-white text-2xl font-semibold cursor-pointer underline hover:no-underline hover:text-yellow-300 transition duration-300"
+            onClick={favouriteList}>Favourite Students</h1>
+        </header>
+      );
 }
 
 export default Header
